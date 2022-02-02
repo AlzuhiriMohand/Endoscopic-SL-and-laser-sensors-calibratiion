@@ -1,6 +1,5 @@
+%--Author: Mohand Alzuhiri
 %----Visual demmostration of the calibration results
-% clear all;clc;
-% close all
 load('OutputFiles\WorldPoints');
 load('OutputFiles\CameraPoints');
 load('OutputFiles\Calresults.mat');

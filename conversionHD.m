@@ -1,11 +1,6 @@
+%--Author: Mohand Alzuhiri
+%---Rectangular to plar domain conversion
 function [xR,yR,imP]=conversionHD(imRg,M,N,rMin,rMax,RGB)
-% clear;clc;close all
-% Srho=616;
-% rMin=0.24;
-% rMax=1;
-% M=Srho-ceil(rMin*Srho);
-% N=720;
-% imRg=imread('testscenes1.png');
 imR=imRg(:,:,1);
 [Mr, Nr] = size(imR); % size of rectangular image
 Om = (Mr+1)/2; % co-ordinates of the center of the image

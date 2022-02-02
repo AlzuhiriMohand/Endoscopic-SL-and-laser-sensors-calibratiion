@@ -1,5 +1,5 @@
 %--Author: Mohand Alzuhiri
-%%----Optimization algorithm with RANSAC
+%%----Cone fitting with RANSAC
 clear all;clc
 load('OutputFiles\WorldPoints');
 load('OutputFiles\CameraPoints');

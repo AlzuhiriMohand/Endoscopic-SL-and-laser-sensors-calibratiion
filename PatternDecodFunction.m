@@ -1,4 +1,5 @@
-%----Reconstruction function
+%--Author: Mohand Alzuhiri
+%----Pattern decodification function
 function [Ip,Wp,imx]=PatternDecodFunction(io)
 %--The final version of the code to reconstruct multiring patterns
 pr=[3,3,2,2,1,1,3,1,2]; %% projected sequene

@@ -1,3 +1,6 @@
+%--Author: Mohand Alzuhiri
+%---A script to automate the extraction of all the camera points from the
+%projector images
 clc;clear
 Wp=[];Ip=[];Ip3=[];Wp3=[];
 o=1:34;
