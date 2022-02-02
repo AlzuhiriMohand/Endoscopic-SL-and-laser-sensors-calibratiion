@@ -1,7 +1,8 @@
+%--Author: Mohand Alzuhiri
 %%----Optimization algorithm with RANSAC
 clear all;clc
-load points.mat
-load tot2.mat
+load('OutputFiles\WorldPoints');
+load('OutputFiles\CameraPoints');
 global W3op noc Ind
 nof=11;   %--number of frames
 noc=5;    %---number of colors
@@ -24,25 +25,13 @@ for i=1:5
     % x(i,:)=modelRANSAC;
     x(i,:)=tested(inlierIdx,x0);
     x0=x(i,:);
-%     scatter3(W3op(inlierIdx,1),W3op(inlierIdx,2),W3op(inlierIdx,3),1)
      scatter3(W3op(:,1),W3op(:,2),W3op(:,3),1)
-
-%     DD(i)=x(i,end);
-%     angle(i)=x(i,1);
-
 end
-
-% x
-% x=[angle,x(1,2:4),DD];
-% angles=(x(1:noc))*180/pi;
-% x(1:noc)=300*tan(x(1:noc));
-% distance=x(noc+4:end);
-% rotation=x(noc+1:noc+3)/norm(x(noc+1:noc+3));
-% % pcshow(I,'b');hold on;conm(x(6)/300,x(end));
+disp('The calibration parameters are')
 prcal=x
 % err
 % r=fu1(x0)
-save para3x prcal
+save('OutputFiles\CalPara','prcal')
 %   106.5245  120.2821  136.1628  152.6631  169.2024   -0.0108    0.0113    1.0226   -1.9619   -1.8619   -1.8619   -1.8619   -1.8619
 
 %%

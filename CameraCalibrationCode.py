@@ -91,6 +91,6 @@ print("D=np.array(" + str(D.tolist()) + ")")
 print(rms)
 #save_path = os.path.join(img_dir,'fisheycal_Demo.npz')
 
-np.savez('fisheycal_Demo.npz', D=D, K=K)
+np.savez('OutputFiles\\CamCalPara.npz', D=D, K=K)
 
     

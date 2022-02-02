@@ -1,9 +1,9 @@
 %----Visual demmostration of the calibration results
 % clear all;clc;
 % close all
-load para3x;
-load points.mat;
-load('Calresults.mat');
+load('OutputFiles\WorldPoints');
+load('OutputFiles\CameraPoints');
+load('OutputFiles\Calresults.mat');
 cl=9;
 Mode='Three';
 if strcmp(Mode,'Two')

@@ -4,7 +4,7 @@ import os
 import numpy as np
 import glob
 import scipy.io as sio
-from FunFile import intersectCirclesRaysToBoard
+from AuxFunctions import intersectCirclesRaysToBoard
 #%%
 dictionary = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_50)
 markerLength = 3.62143/2.54  # Here, our measurement unit is inches.
@@ -13,7 +13,7 @@ board = cv2.aruco.GridBoard_create(4, 6, markerLength, markerSeparation, diction
 img = board.draw((200*4,200*6))
 cv2.imshow('o',img)
 #%%
-save_path='fisheycal_Demo.npz'
+save_path='OutputFiles\\CamCalPara.npz'
 with np.load(save_path) as X:
     K, D= [X[i] for i in ('K','D')]
 n=0
@@ -72,7 +72,7 @@ cv2.destroyAllWindows()
 Wp=[]
 Ip=[]
 objectPoints=[]
-mat_contents = sio.loadmat('tot2.mat')
+mat_contents = sio.loadmat('OutputFiles\\CameraPoints.mat')
 Ip1=mat_contents['Ip']
 #Wp1=mat_contents['Wp']
 
@@ -130,5 +130,5 @@ K_proj[1,2]=615.5
 
 #%%
  
-sio.savemat('Calresults.mat',{'K':K,'D':D,'Kp':K_proj,'Dp':dist_coef_proj,'Knew':Knew})
-sio.savemat('points.mat',{'World_p':objectPointsAccum })
+sio.savemat('OutputFiles\\Calresults.mat',{'K':K,'D':D,'Kp':K_proj,'Dp':dist_coef_proj,'Knew':Knew})
+sio.savemat('OutputFiles\\WorldPoints.mat',{'World_p':objectPointsAccum })
